@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+:root {
+    --dark: hsl(217, 19%, 35%);
+    --gray: hsl(214, 17%, 51%);
+    --blue: hsl(212, 23%, 69%);
+    --light: hsl(210, 46%, 95%);
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+}
+.attribution { 
+    font-size: 11px;
+    text-align: center;
+    position: fixed;
+    bottom: 40px; 
+}
+.attribution a {
+    color: hsl(228, 45%, 44%); 
+}
+body {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--light);
+}
+.component {
+    background-color: white;
+    box-shadow: 0 1rem 4rem -1.5rem var(--blue);
+    display: grid;
+    border-radius: 20px;
+}
+/* ######### DESKTOP ########### */
+@media screen and (min-width: 400px) {
+    .component {
+        width: 700px;
+        height: 250px;
+        grid-template-columns: 250px auto;
+        grid-template-areas: "img txt";
+
+    }
+    .image {
+        border-radius: 20px 0 0 20px;
+    
+    }
+    .text {
+        border-radius: 0 20px 20px 0;
+    }
+}
+/* ######### MOBILE ########### */
+
+.image {
+    grid-area: img;
+    background: url('images/drawers.jpg');
+    background-size: cover;
+
+}
+.text {
+    grid-area: txt;
+    margin: 0;
+    padding: 2rem 2.6rem 2rem 2.6rem;
+    color: var(--gray);
+    line-height: 1.8rem;
+
+}
+h1 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--dark);
+}
+b {
+    color: var(--dark);
+}
+.social {    
+    display: flex;
+    flex-direction: row;
+    flex-basis: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+
+}
+.author {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.avatar {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+.share {
+    justify-self: flex-start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: var(--light);
+    
+}
+#arrow {
+    width: 50%;
+    filter: brightness(90%);
+}
+
+.share:hover {
+    background: var(--dark);
+}
+
+.share:hover #arrow {
+    filter: brightness(300%);
+}
