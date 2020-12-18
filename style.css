@@ -47,9 +47,35 @@ body {
     .text {
         border-radius: 0 20px 20px 0;
     }
-    .share-popup {
+        /* popup */
+    .share-popup, .share-popup::after {
         box-shadow: 0 1rem 3rem -0.5rem var(--blue);
     }
+    .share-popup {
+        position: absolute;
+        width: 150px;
+        height: 20px;
+        border-radius: 10px;
+        padding: 1rem 4rem 1rem 4rem;
+        transform: translate(-110px, -110px);
+    }
+    .share-popup::after {
+        z-index: 2;
+        content: '';
+        background: var(--dark);
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        left: 110px;
+        top: 45px;
+        clip-path: polygon(0 0, 100% 0, 50% 60%);
+        
+    }
+    .share:focus-within .share-popup{
+        opacity: 1;
+    }
+
+    
 }
 /* ######### MOBILE ########### */
 
@@ -112,41 +138,23 @@ b {
     width: 50%;
     filter: brightness(90%);
 }
-
 .share-btn:hover {
     background: var(--dark);
 }
-
 .share-btn:hover #arrow {
     filter: brightness(300%);
 }
 .share-popup {
-    opacity: 0; /* ########## */
-    z-index: 3;
-    position: absolute;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 1rem 2rem 1rem 2rem;
-    width: 150px;
-    height: 20px;
+    opacity: 0; /* ########## */
+    z-index: 3;
     background: var(--dark);
-    border-radius: 10px;
-    transform: translate(-88px, -110px);
+    color: var(--blue);
+    letter-spacing: .3rem;
 }
-.share-popup::after {
-    z-index: 8;
-    content: '';
-    background: var(--dark);
-    width: 20px;
-    height: 20px;
-    position: relative;
-    left: -40px;
-    top: 30px;
-    clip-path: polygon(0 0, 100% 0, 50% 80%);
-
-}
-.share:focus-within .share-popup{
-    opacity: 1;
+.share-popup img {
+    padding: 0.7rem;
 }
