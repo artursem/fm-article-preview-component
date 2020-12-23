@@ -178,16 +178,13 @@ b {
     }
     .social {
         width: 100%;
-        border: 1px solid black;
+/*         border: 1px solid black; */
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: flex-end;
     }
 
-    .author {
-        flex-grow: 1;
-    }
     .share {
         margin-left: auto;
         display: flex;
@@ -196,7 +193,5 @@ b {
         align-items: center;
 
     }
-    .share-btn {
-        
-    }
+
 }
